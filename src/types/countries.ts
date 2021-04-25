@@ -4,7 +4,7 @@ export type Currency = {
   symbol: string
 }
 
-export type Countries = {
+export type Country = {
   capital: number
   currencies: Currency[]
   name: string
