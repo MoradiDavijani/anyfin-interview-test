@@ -1,3 +1,17 @@
+/* Variables */
+[data-theme='light'] {
+  --primary-color: #00e9ba;
+  --accent-color: #02bfb0;
+  --font-color: #424242;
+}
+
+[data-theme='dark'] {
+  --primary-color: #00192f;
+  --accent-color: #004788;
+  --font-color: #ffffff;
+}
+
+/* Global Styles */
 html,
 body,
 div#__next {
@@ -5,6 +19,8 @@ div#__next {
   margin: 0;
   width: 100%;
   height: 100%;
+  background-color: var(--primary-color);
+  transition: background-color 200ms ease-in-out;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -16,4 +32,5 @@ a {
 
 * {
   box-sizing: border-box;
+  color: var(--font-color);
 }
