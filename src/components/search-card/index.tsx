@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import type { Country } from 'src/types/countries'
 import useDebouncedCallback from 'src/hooks/debounced-callback'
 import usePersistedState from 'src/hooks/persisted-state'
@@ -9,11 +10,7 @@ import Button from 'src/components/button'
 import Spinner from 'src/components/spinner'
 import styles from './search-card.module.css'
 
-type SearchCardProps = {
-  onSelect: (country: Country) => void
-}
-
-function SearchCard({ onSelect }: SearchCardProps) {
+function SearchCard() {
   const [query, setQuery] = React.useState<string>('')
   const [recentCountries, setRecentCountries] = usePersistedState<Country[]>(
     'recentCountries',
@@ -48,7 +45,6 @@ function SearchCard({ onSelect }: SearchCardProps) {
       country,
       ...prevState.filter(recentCountry => recentCountry.name !== country.name)
     ])
-    onSelect(country)
   }
 
   const countriesToShow =
@@ -74,13 +70,17 @@ function SearchCard({ onSelect }: SearchCardProps) {
       <ul className={styles.searchCard__itemsList}>
         {countriesToShow.map(country => (
           <li key={country.name} className={styles.searchCard__item}>
-            <Button
-              variant="link"
-              onClick={() => onSelectCountry(country)}
-              className={styles.searchCard__itemButton}
-            >
-              {country.name}
-            </Button>
+            <Link href={`/country/${country.alpha3Code}`}>
+              <a>
+                <Button
+                  variant="link"
+                  onClick={() => onSelectCountry(country)}
+                  className={styles.searchCard__itemButton}
+                >
+                  {country.name}
+                </Button>
+              </a>
+            </Link>
           </li>
         ))}
       </ul>

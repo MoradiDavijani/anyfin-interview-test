@@ -1,0 +1,32 @@
+.country {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3rem 1rem 1rem;
+}
+
+.country__card {
+  background-color: var(--accent-color);
+  box-shadow: var(--card-shadow);
+  border-radius: 1rem;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  width: 100%;
+  max-width: 50rem;
+}
+
+.country__title {
+  margin: 2rem 0;
+  font-size: 3rem;
+  color: var(--font-color);
+}
+
+.country__subtitle {
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: var(--font-color);
+}

@@ -5,7 +5,8 @@ export type Currency = {
 }
 
 export type Country = {
-  capital: number
+  alpha3Code: string
+  capital: string
   currencies: Currency[]
   name: string
   population: number

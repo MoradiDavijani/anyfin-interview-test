@@ -36,7 +36,11 @@ export const getConvertedAmount = async ({
   to: string
   amount: number
 }): Promise<ConvertResponse> => {
-  const now = new Date()
+  /**
+   * The Fixer API returns `invalid_date` error on early hours of each day, so
+   * we have to add a delay (12 hours for example).
+   */
+  const now = new Date(Date.now() - 12 * 60 * 60 * 1000)
   const currentDate = `${now.getFullYear()}-${ensureTwoDigits(
     now.getMonth() + 1
   )}-${ensureTwoDigits(now.getDate())}`

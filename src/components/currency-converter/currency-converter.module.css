@@ -1,0 +1,35 @@
+.converter {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.converter__inputLabel {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.converter__inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.converter__input {
+  flex: 1;
+  padding-right: 2.5rem;
+}
+
+.converter__inputIcon {
+  position: absolute;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.75;
+}
+
+.converter__result {
+  font-size: 5rem;
+  font-family: monospace;
+  margin-top: 3rem;
+}
