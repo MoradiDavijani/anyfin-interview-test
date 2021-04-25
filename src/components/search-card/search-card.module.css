@@ -1,0 +1,47 @@
+.searchCard {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+  padding: 1rem;
+  background-color: var(--accent-color);
+}
+
+.searchCard__inputWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchCard__input {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.searchCard__spinner {
+  position: absolute;
+  right: 1rem;
+}
+
+.searchCard__itemsList {
+  overflow: auto;
+  border-top: 1px solid var(--border-color);
+}
+
+.searchCard__item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.searchCard__itemButton {
+  height: 4rem;
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .searchCard {
+    width: 30rem;
+    margin: 0 auto 1rem;
+  }
+}

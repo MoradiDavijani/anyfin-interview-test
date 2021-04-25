@@ -1,0 +1,16 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: url(https://source.unsplash.com/featured/?Countries) top left /
+    cover no-repeat;
+  padding: 1rem;
+}
+
+.home__title {
+  margin: 2rem 0;
+  font-size: 3rem;
+  color: var(--accent-color);
+}

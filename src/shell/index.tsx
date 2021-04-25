@@ -18,10 +18,10 @@ function Shell({ children }: ShellProps) {
   return (
     <>
       <CommonMetaTags />
-      <main className={styles.main}>
-        <Button onClick={toggleDarkMode}>Toggle Theme</Button>
-        {children}
-      </main>
+      <Button onClick={toggleDarkMode} className={styles.themeButton}>
+        Toggle Theme
+      </Button>
+      {children}
     </>
   )
 }
