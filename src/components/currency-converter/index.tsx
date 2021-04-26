@@ -14,7 +14,8 @@ function CurrencyConverter({
   currency,
   currencyRateAmount
 }: CurrencyConverterProps) {
-  const [amount, setAmount] = React.useState<number>(1)
+  const [amountText, setAmountText] = React.useState<string>('1')
+  const amount = Number(amountText)
 
   const localAmount = currencyRateAmount * amount
   const localAmountText =
@@ -27,11 +28,11 @@ function CurrencyConverter({
       </label>
       <div className={styles.converter__inputWrapper}>
         <TextInput
-          value={amount}
+          value={amountText}
           type="number"
           className={styles.converter__input}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setAmount(Number(event.target.value))
+            setAmountText(event.target.value)
           }
         />
         <span className={styles.converter__inputIcon}>
