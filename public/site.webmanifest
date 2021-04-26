@@ -3,7 +3,7 @@
   "short_name": "Countries",
   "description": "Countries app is a search engine for countries all over the world.",
   "start_url": "/?source=pwa",
-  "orientation": "landscape",
+  "orientation": "portrait",
   "theme_color": "#00e9ba",
   "background_color": "#ffffff",
   "display": "standalone",

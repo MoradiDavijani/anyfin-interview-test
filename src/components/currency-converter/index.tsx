@@ -1,6 +1,7 @@
 import React from 'react'
 import TextInput from 'src/components/text-input'
 import { BASE_CURRENCY } from 'src/configs/currencies'
+import { numberToText } from 'src/helpers/number-to-text'
 import type { Currency } from 'src/types/countries'
 import styles from './currency-converter.module.css'
 
@@ -14,6 +15,10 @@ function CurrencyConverter({
   currencyRateAmount
 }: CurrencyConverterProps) {
   const [amount, setAmount] = React.useState<number>(1)
+
+  const localAmount = currencyRateAmount * amount
+  const localAmountText =
+    localAmount > 999_999 ? numberToText(localAmount) : localAmount.toFixed(2)
 
   return (
     <div className={styles.converter}>
@@ -34,9 +39,9 @@ function CurrencyConverter({
         </span>
       </div>
       <div className={styles.converter__result}>
-        <span>
-          {(currencyRateAmount * amount).toFixed(3)}{' '}
-          <span>{currency.symbol}</span>
+        <span>{localAmountText}</span>
+        <span className={styles.converter__resultCurrency}>
+          {currency.name} ({currency.symbol})
         </span>
       </div>
     </div>
