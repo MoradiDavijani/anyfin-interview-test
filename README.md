@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Location of deployed application
 
-## Getting Started
+[Heroku Application](https://anyfin-countries.herokuapp.com/)
 
-First, run the development server:
+**NOTE:** Please note that it is on a free Heroku account. So, the first time you open the URL will take more because it sleeps after 30 minutes of inactivity and may take around a minute to wake up again.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Time spent
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I spent about 5.5 hours on the assignment:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Reading APIs: ~0.25h
+- Thinking about the app features and UI: ~0.5h
+- Installing NextJs and preparing the project: ~0.25h
+- Adding backend APIs to get data: ~1h
+- Adding the Home page components: ~1.5h
+- Adding the Country page components: ~1.5h
+- Deploying on Heroku: ~0.25h
+- Adding this document: ~0.25h
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Shortcuts/Compromises made
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+There are a lot of parts that could be better if it was a real-world application. Here are some of the enhancements I would do if I had more time:
 
-## Learn More
+- Improve UI with a better design!
+- Add tests!
+- Add internationalization for users to be able to change the website language
+- Add json/ld schemas for country pages for SEO improvements.
+- I used a UTF-8 character instead of icon and I know that it looks different on different devices. I usually use [webfont-webpack-plugin](https://www.npmjs.com/package/webfont-webpack-plugin) to generate a web-font from my SVG files.
+- Add the feature to change the base currency from SEK to something else.
+- Cache assets in the service-worker so that it can show the latest fetched information when user is offline.
+- Add some [shortcuts](https://developer.mozilla.org/en-US/docs/Web/Manifest/shortcuts) for the app in the `site.webmanifest` file.
+- I used Heroku CLI to deploy the app, but we could use Vercel (NextJs recommended platform) or Docker with a CI/CD tool like CircleCI.
 
-To learn more about Next.js, take a look at the following resources:
+### Instructions to run assignment locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Follow these steps to run the project on your local machine:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Copy the `.env.sample` file to `.env.local` and replace the value for `FIXER_API_KEY` with your own Fixer API key.
+2. Install dependencies: `npm install`.
+3. Run the development server: `npm run dev`.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
